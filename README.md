@@ -9,6 +9,23 @@ The two python modules to use here are lcd.py and ip.py. Make sure both of these
 Note that the lcd.py is code from this website:
 https://bitbucket.org/MattHawkinsUK/rpispy-misc/raw/master/python/lcd_16x2.py
 
+You'll need to download that anbd rename it to lcd.py
+Then modify the GPIO pin assingment at this part:
+#Define GPIO to LCD mapping
+```
+LCD_RS = 26
+LCD_E  = 19
+LCD_D4 = 13
+LCD_D5 = 6
+LCD_D6 = 5
+LCD_D7 = 11
+```
+Note that this is for the 40-pin GPIO type Raspberry Pi's not all Raspberry Pi'z have that same layout.
+
+Further some code will have to be modified, namely to comment out all the GPIO.setup lines in the `main():` block, but leave the `GPIO.setmode(GPIO.BCM)` uncommented.
+
+Then you'll add those commented-out lines from `main():` into `lcd_init():` and be sure to have GPIO.setwarnings(False) in there. The youtube video referenced below goes over this.
+
 ### Drive the LCD and how to wire the Pi Zero to your 16x2 LCD
 This is the youtube video that was most helpful to me:
 https://www.youtube.com/watch?v=cVdSc8VYVBM
