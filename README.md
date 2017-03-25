@@ -42,7 +42,7 @@ I used the answer posted by UnkwnTech that uses gmail.com to get the local ip. I
 ### Modify ip.py to ping a specific domain
 I mentioned the code I used to find the IP address with Python, the original example used gmail.com, I'm not saying that's wrong, I'm not sure if there will be unforseen consequences pinging gmail every 5 minutes. I used my own webserver that I rent. It's up to you to decide who to ping if you decide to use this route to get your ip.
 
-### Add to crontab to update very X-minutes
+### Add to crontab to update every X-minutes
 I was surprised how straightforward it was to add the process to cron.
 
 So at a terminal, assuming you've ssh'd into your pi
